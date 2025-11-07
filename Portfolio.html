@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nayo | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: rgb(179, 194, 186);
+      color: #000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Header */
+    header {
+            background:  linear-gradient(135deg, #1e1e2f, #3a3a5c);
+            padding: 20px 40px;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 150px;
+            padding: 10px 20px;
+            animation: fadeDown 1s ease;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #fbff00;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+
+    .header-text {
+      text-align: center;
+    }
+
+    .header-text h1 {
+      font-size: 2.3rem;
+      color: #ffd700;
+    }
+
+    .header-text p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-top: 0.4rem;
+      color: white;
+    }
+
+    /* Section */
+    section {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(6px);
+      border-radius: 15px;
+      padding: 1.5rem 2rem;
+      margin: 1.5rem auto;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      animation: fadeUp 1.5s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #fd1676;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+
+    .about p {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .skills-box {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .skills-box h3 {
+      text-align: center;
+      margin-bottom: 0.8rem;
+      color: #046447;
+    }
+
+    .skills-box ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    .skills-box li {
+      margin-bottom: 0.6rem;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    /* Divider line */
+    .skills-container::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 95%;
+      background-color: #fd1676;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding-left: 10px;
+    }
+
+    .contact p {
+      font-size: 1.05rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Stair-step alignment */
+    .contact .email { margin-left: 0; }
+    .contact .instagram { margin-left: 20px; }
+    .contact .linkedin { margin-left: 120px; }
+
+    .contact a {
+      color: #14994b;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #000;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Scroll Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #ffd700;
+      color: #1e1e2f;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      display: none;
+      transition: 0.3s;
+    }
+
+    #scrollTopBtn:hover {
+      transform: scale(1.1);
+      background: #ffe34d;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <img src="ministry.png" alt="Nayo's Photo" class="profile-pic" />
+      <div class="header-text">
+        <h1>Hi, I'm Nuhamin 👋</h1>
+        <p>Junior Developer • DevTech Virtual Intern</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi, I'm Nuhamin, an aspiring web developer with growing skills in front-end and back-end development. I started my coding journey in 2025 through an intense summer program, where I took Introduction to Full-Stack Development and Introduction to Python courses and earned a bronze medal as one of the top three coders. I'm passionate about creating responsive and visually appealing websites and love exploring how both front-end and back-end systems work together. I’m currently an intern at DevTech’s 3rd Round Virtual Internship Program, where I’m gaining real-world experience and expanding my knowledge as a future developer.
+    </p>
+  </section>
+
+  <section class="skills">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skills-box">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>HTML & CSS – Building and styling responsive pages</li>
+          <li>JavaScript (Basic) – Adding interactivity</li>
+          <li>Python (Beginner) – Writing simple programs</li>
+          <li>Full-Stack Concepts – Connecting front-end & back-end</li>
+        </ul>
+      </div>
+      <div class="skills-box">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Problem-solving and persistence</li>
+          <li>Fast learner with curiosity</li>
+          <li>Team collaboration and communication</li>
+          <li>Creativity in web design</li>
+          <li>Attention to detail</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p class="email">Email: <a href="mailto:nuhaminnigatu541@gmail.com">nuhaminnigatu541@gmail.com</a></p>
+    <p class="instagram">Instagram: <a href="https://instagram.com/wiseborn_16" target="_blank">@wiseborn_16</a></p>
+    <p class="linkedin">LinkedIn: <a href="https://www.linkedin.com/in/nuhamin-nigatu-2ba181376" target="_blank">Nuhamin-Nigatu</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Nuhamin. All rights reserved.</p>
+  </footer>
+
+  <button id="scrollTopBtn">↑</button>
+
+  <script>
+    const btn = document.getElementById("scrollTopBtn");
+    window.onscroll = function () {
+      if (
+        document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100
+      ) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    btn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>
